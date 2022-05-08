@@ -114,9 +114,15 @@ run().catch(console.dir);
 
 
 // creating an api at the root to check whether everything is running correctly or not
+app.get('/hero', (req, res) => {
+    res.send('running heroku server');
+})
+
 app.get('/', (req, res) => {
     res.send('running genius server');
 })
+
+
 
 app.listen(port, () => {
     console.log('listening to port', port);
